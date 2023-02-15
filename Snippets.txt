@@ -10,3 +10,7 @@ player setDamage `*set 0 - 1 here *`;
 Unlimited ammo:
 player addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
 
+Spawn vehicle on player, play a different class between "" for different vehicle:
+"B_Quadbike_01_F" createVehicle position player;
+***https://community.bistudio.com/wiki/Arma_3:_CfgVehicles_WEST***
+
