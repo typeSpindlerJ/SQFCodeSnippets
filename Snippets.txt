@@ -1,16 +1,21 @@
-No weapon sway, no fatigue:
-player setCustomAimCoef 0.001; player enableFatigue false;
+HALO JUMP needs alittle setup:
 
-Set the trigger to heal:
-{_x setDamage 0} foreach thisList; hint "You are healed!";
+*** add this to an object you placed on the ground ( like a sign ):
 
-Set Player damage:
-player setDamage `*set 0 - 1 here *`;
+this addAction ["HALO Jump", "halo.sqf"]
 
-Unlimited ammo:
-player addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+*** create halo.sqf in your mission folder, add this code:
 
-Spawn vehicle on player, play a different class between "" for different vehicle:
-"B_Quadbike_01_F" createVehicle position player;
-***https://community.bistudio.com/wiki/Arma_3:_CfgVehicles_WEST***
+openMap true;
+onMapSingleClick
+{
+   player setPos _pos;
+   _alt = 2000;
+   [ player, _alt ] spawn BIS_fnc_halo;
+   player addBackpack "B_Parachute";
+   openMap false;
+};
+
+*** you could also set the above code in a trigger and 
+	add this in "On Activation"
 
