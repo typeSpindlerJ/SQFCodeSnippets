@@ -1,4 +1,5 @@
-// HALO JUMP needs alittle setup:
+// HALO JUMP - This is very basic, once triggered you can goto the map
+//             single click again and you will halo again right away:
 
 //*** add this to an object you placed on the ground ( like a sign ):
 
